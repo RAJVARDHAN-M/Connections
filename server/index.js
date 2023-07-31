@@ -19,14 +19,13 @@ app.use("/user", userRouter);
 const CONNECTION_URL = 'mongodb+srv://rajvardhanmane891:raj@cluster0.pfct39j.mongodb.net/booking?retryWrites=true&w=majority';
 const PORT =8800;
 
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =>console.log("Database connected"))
+  .catch((error) => console.log(`${error} did not connect`));
 
+mongoose.set('useFindAndModify', false);``
 
 
 app.listen(PORT, () => {
-  mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() =>console.log("Database connected"))
-  .catch((error) => console.log(`${error} did not connect`));
-  
-  mongoose.set('useFindAndModify', false);
   console.log(`Server Running on Port: http://localhost:${PORT}`);
 })
