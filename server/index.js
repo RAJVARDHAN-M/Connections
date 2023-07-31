@@ -17,7 +17,7 @@ app.use('/posts', postRoutes);
 app.use("/user", userRouter);
 
 const CONNECTION_URL = 'mongodb+srv://rajvardhanmane891:raj@cluster0.pfct39j.mongodb.net/booking?retryWrites=true&w=majority';
-const PORT = 5000;
+const PORT = 10000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log("Database connected")))
