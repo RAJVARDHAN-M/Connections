@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json({ limit: '30mb', extended: true }))
 app.use(express.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors());
+app.use(cors(["https://connection-api.onrender.com"]));
 
 app.use('/posts', postRoutes);
 app.use("/user", userRouter);
@@ -23,7 +23,7 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
   .then(() => app.listen(PORT, () => console.log("Database connected")))
   .catch((error) => console.log(`${error} did not connect`));
 
-mongoose.set('useFindAndModify', false);
+mongoose.set('useFindAndModify', false);``
 
 
 app.listen(PORT, () => {
