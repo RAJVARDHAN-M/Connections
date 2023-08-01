@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json({ limit: '30mb', extended: true }))
 app.use(express.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors(["https://connection-api.onrender.com","https://connection-9uht.onrender.com","www.google.com"]));
+app.use(cors(["https://conn.onrender.com","https://connection-9uht.onrender.com","www.google.com"]));
 
 app.use('/posts', postRoutes);
 app.use("/user", userRouter);
