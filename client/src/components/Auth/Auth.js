@@ -44,7 +44,7 @@ const SignUp = () => {
     const token = res?.tokenId;
 
     try {
-      dispatch({ type: AUTH, data: { result, token } });
+      dispatch({ type: 'AUTH', data: { result, token } });
 
       history.push('/');
     } catch (error) {
